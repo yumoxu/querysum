@@ -114,11 +114,7 @@ else:
 
 logger = logging.getLogger('my_logger')
 logger.setLevel(logging.DEBUG)
-print('path_parser.log: {}'.format(path_parser.log))
-print('model_name: {}'.format(model_name))
-# log_fp = join(path_parser.log, '{0}.log'.format(model_name))
-# file_handler = logging.FileHandler(log_fp)
-file_handler = logging.FileHandler('{0}.log'.format(model_name))
+file_handler = logging.FileHandler('log/{0}.log'.format(model_name))
 console_handler = logging.StreamHandler(sys.stdout)
 formatter = logging.Formatter("[%(filename)s:%(lineno)s - %(funcName)20s() ] %(message)s")
 file_handler.setFormatter(formatter)
