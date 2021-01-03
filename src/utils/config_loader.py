@@ -88,11 +88,12 @@ class PathParser:
         self.rouge_dir = '~/ROUGE-1.5.5/data'  # specify your ROUGE dir
 
 proj_root = os.path.dirname(os.path.dirname(__file__))
-path_parser = PathParser(proj_root=proj_root)
-
 config_root = join(proj_root, 'config')
+
+# meta
 config_meta_fp = os.path.join(config_root, 'config_meta.yml')
 config_meta = yaml.load(open(config_meta_fp, 'r', encoding='utf-8'))
+path_parser = PathParser(proj_root=proj_root)
 
 # model
 meta_model_name = config_meta['model_name']
