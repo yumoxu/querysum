@@ -114,6 +114,8 @@ else:
 
 logger = logging.getLogger('my_logger')
 logger.setLevel(logging.DEBUG)
+print('path_parser.log: {}'.format(path_parser.log))
+print('model_name: {}'.format(model_name))
 log_fp = join(path_parser.log, '{0}.log'.format(model_name))
 file_handler = logging.FileHandler(log_fp)
 console_handler = logging.StreamHandler(sys.stdout)
