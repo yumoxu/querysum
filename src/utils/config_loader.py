@@ -85,7 +85,7 @@ class PathParser:
         self.rouge = join(self.proj_root, 'rouge')
 
         self.tune = join(self.proj_root, 'tune')
-        self.rouge_dir = 'ROOT_DIR_FOR_ROUGE' / 'ROUGE-1.5.5' / 'data'
+        self.rouge_dir = '~/ROUGE-1.5.5/data'  # specify your ROUGE dir
 
 
 config_root = join(os.path.dirname(os.path.dirname(__file__)), 'config')
