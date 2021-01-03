@@ -98,7 +98,7 @@ def rank_e2e():
         rank_records = _lexrank(cid)
         rank_sent.dump_rank_records(rank_records, out_fp=join(rank_dp, cid), with_rank_idx = False)
 
-    logger.info('[RANK SENT] successfully dumped rankings to: {}'.format(rank_dp))
+    logger.info('Successfully dumped rankings to: {}'.format(rank_dp))
 
 
 def select_e2e():

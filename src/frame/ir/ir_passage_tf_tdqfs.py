@@ -57,7 +57,7 @@ def rank_e2e():
     for cid_query_dict in tqdm(test_cid_query_dicts):
         rank_records = _rank(**cid_query_dict)
         rank_sent.dump_rank_records(rank_records, out_fp=join(rank_dp, cid_query_dict['cid']), with_rank_idx=False)
-    logger.info('[RANK SENT] successfully dumped rankings to: {}'.format(rank_dp))
+    logger.info('Successfully dumped rankings to: {}'.format(rank_dp))
 
 
 def ir_rank2records():
