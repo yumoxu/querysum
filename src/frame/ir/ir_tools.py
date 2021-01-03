@@ -190,13 +190,12 @@ def _retrieve_from_rank_items_via_top_k(rank_items, k, deduplicate):
 
 def _prune_rank_items(rank_items, threshold=1e-10):
     if float(rank_items[-1][1]) > threshold:
-        logger.info('[_prune_rank_items] Prune ratio: 0.00')
+        logger.info('Prune ratio: 0.00')
         return rank_items
 
     for i in range(len(rank_items)):
         if float(rank_items[i][1]) <= threshold:
-            logger.info('[_prune_rank_items] Prune ratio: {0:.2f}'.format(float(i) / len(rank_items)))
-
+            logger.info('Prune ratio: {0:.2f}'.format(float(i) / len(rank_items)))
             return rank_items[:i]
 
 
