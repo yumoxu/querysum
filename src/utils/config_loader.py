@@ -58,7 +58,7 @@ class PathParser:
 
         self.res = join(self.proj_root, 'res')
         self.model_save = join(self.proj_root, 'model')
-        self.bert_qa = join(self.model_save, 'bert_qa')
+        self.bert_qa = join(self.model_save, 'qa_sentence')
 
         # bert passage
         self.bert_passage_root = join(self.model_save, 'squad_passage')
