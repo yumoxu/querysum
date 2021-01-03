@@ -11,8 +11,6 @@ config_root = join(os.path.dirname(os.path.dirname(os.path.dirname(__file__))), 
 # meta
 config_meta_fp = os.path.join(config_root, 'config_meta.yml')
 config_meta = yaml.load(open(config_meta_fp, 'r', encoding='utf-8'))
-config_path_fp = os.path.join(config_root, 'config_path.yml')
-config_path = yaml.load(open(config_path_fp, 'r'))
 
 # model
 meta_model_name = config_meta['model_name']

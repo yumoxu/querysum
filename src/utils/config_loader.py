@@ -32,24 +32,18 @@ def deprecated(func):
 
 
 class PathParser:
-    def __init__(self, config_path):
-        self.proj_root = config_path['proj_root']
-        self.proj_paths = config_path['proj_paths']
-
-        # set performances
-        self.performances = join(self.proj_root, self.proj_paths['performances'])
-        self.log = join(self.proj_root, self.proj_paths['log'])
+    def __init__(self, proj_root='~/querysum'):
+        self.proj_root = proj_root
+        self.log = join(self.proj_root, 'log')
 
         # set data
-        self.data = join(self.proj_root, self.proj_paths['data'])
-
+        self.data = join(self.proj_root, 'data')
         self.squad = join(self.data, 'squad')
         self.squad_raw = join(self.squad, 'raw')
         self.squad_proc = join(self.squad, 'proc')
-
-        self.data_docs = join(self.data, self.proj_paths['docs'])
+        self.data_docs = join(self.data, 'docs')
         self.data_passages = join(self.data, 'passages')
-        self.data_topics = join(self.data, self.proj_paths['topics'])
+        self.data_topics = join(self.data, 'topics')
 
         # tdqfs
         self.data_tdqfs = join(self.data, 'tdqfs')
@@ -58,15 +52,12 @@ class PathParser:
         self.data_tdqfs_queries = join(self.data_tdqfs, 'query_info.txt')
         self.data_tdqfs_summary_targets = join(self.data_tdqfs, 'summary_targets')
 
-        self.data_summary_results = join(self.data, self.proj_paths['summary_results'])
-        self.data_summary_refs = join(self.data, self.proj_paths['summary_refs'])
-        self.data_summary_targets = join(self.data, self.proj_paths['summary_targets'])
+        self.data_summary_results = join(self.data, 'summary_results')
+        self.data_summary_refs = join(self.data, 'summary_refs')
+        self.data_summary_targets = join(self.data, 'summary_targets')
 
-        # set res
-        self.res = join(self.proj_root, self.proj_paths['res'])
-        self.bert_qa_rel_scores = join(self.res, 'bert_qa', 'rel_scores_{}')
-
-        self.model_save = join(self.proj_root, self.proj_paths['model'])
+        self.res = join(self.proj_root, 'res')
+        self.model_save = join(self.proj_root, 'model')
         self.bert_qa = join(self.model_save, 'saved.qa_2')
 
         # bert passage
@@ -77,7 +68,7 @@ class PathParser:
         self.bert_passage_model = join(self.bert_passage_checkpoint, 'pytorch_model.bin')
         self.bert_passage_config = join(self.bert_passage_checkpoint, 'config.json')
 
-        self.pred = join(self.proj_root, self.proj_paths['pred'])
+        self.pred = join(self.proj_root, 'pred')
 
         if config_meta['grain'] == 'sent':
             self.summary_rank = join(self.proj_root, 'rank')
@@ -91,7 +82,7 @@ class PathParser:
         self.graph_rel_scores = join(self.graph, 'rel_scores')  # for dumping relevance scores
         self.graph_token_logits = join(self.graph, 'token_logits')  # for dumping relevance scores
 
-        self.rouge = join(self.proj_root, self.proj_paths['rouge'])
+        self.rouge = join(self.proj_root, 'rouge')
 
         self.tune = join(self.proj_root, 'tune')
         self.rouge_dir = 'ROOT_DIR_FOR_ROUGE' / 'ROUGE-1.5.5' / 'data'
@@ -102,10 +93,7 @@ config_root = join(os.path.dirname(os.path.dirname(__file__)), 'config')
 # meta
 config_meta_fp = os.path.join(config_root, 'config_meta.yml')
 config_meta = yaml.load(open(config_meta_fp, 'r', encoding='utf-8'))
-config_path_fp = os.path.join(config_root, 'config_path.yml')
-config_path = yaml.load(open(config_path_fp, 'r'))
-
-path_parser = PathParser(config_path)
+path_parser = PathParser()
 
 # model
 meta_model_name = config_meta['model_name']
