@@ -1,0 +1,16 @@
+---
+model_name: 'bert_qa'  # bert_qa, bert_passage, bert_base
+test_year: 'tdqfs'  # 2005, 2006, 2007, tdqfs
+grain: 'sent'  # sent, passage, passage_4
+
+mode: 'train'  # train, rank_sent, select_sent
+para_org: null  # True, null
+
+auto_parallel: True
+
+word_tokenizer: 'bert'  # bert, nltk
+preload_model_tokenizer: True  # True when using pre-trained Bert model: None, mb, qa, bing
+vocab: 'bert'  # bert
+texttiling: True
+
+remove_dialog: False

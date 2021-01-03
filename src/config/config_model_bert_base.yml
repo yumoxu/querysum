@@ -1,0 +1,20 @@
+---
+variation: 'BertBase'
+
+model_name: 'BertBase'
+fine_tune: 'qa'
+
+n_epochs: 40
+n_batches: 10000
+
+# input size
+# input: d_batch * max_ns_doc * max_n_tokens
+d_batch: 32  # 32, 64, 128, 200
+
+max_ns_doc: 100
+
+max_nw_query: 100
+max_nw_sent: 70
+max_n_tokens: 173  # [CLS], [SEP] * 2
+
+d_embed: 768

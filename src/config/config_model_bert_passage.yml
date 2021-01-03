@@ -1,0 +1,22 @@
+---
+variation: 'BertPassage'
+
+model_name: 'BertPassage'
+fine_tune: 'passage'
+
+n_epochs: 40
+n_batches: 10000
+
+# input size
+# input: d_batch * max_ns_doc * max_n_tokens
+d_batch: 24  # 16, 32, 64, 128, 200
+
+max_ns_doc: 100
+
+max_nw_query: 100  # 100
+max_nw_sent: 50
+ns_passage: 8
+stride: 4
+max_n_tokens: 503  # [CLS], [SEP] * 2, 100 + 50 * 8 + 3
+
+d_embed: 768
