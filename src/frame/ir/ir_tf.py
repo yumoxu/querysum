@@ -188,5 +188,5 @@ def compute_rouge_for_oracle():
 if __name__ == '__main__':
     rank_e2e()
     # ir_rank2records()
-    compute_rouge_for_oracle()
+    # compute_rouge_for_oracle()
     # tune()
