@@ -38,15 +38,19 @@ cd ..
 virtualenv -p python3.6 querysum
 cd querysum
 . bin/activate
-pip freeze > requirements.txt
 pip install -r requirements.txt
 ```
-You also need to install apex:
+You need to install apex:
 ```bash
 cd ..
 git clone https://www.github.com/nvidia/apex
 cd apex
 python3 setup.py install
+```
+
+Also, you need to setup ROUGE evaluation if you have not yet done it. Please refer to [this](https://github.com/bheinzerling/pyrouge) repository. After finishing the setup, specify the ROUGE path in `frame/utils/config_loader.py` as an attribute of `PathParser`:
+```python
+self.rouge_dir = '~/ROUGE-1.5.5/data'  # specify your ROUGE dir
 ```
 
 ## Prepare benchmark data
