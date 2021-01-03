@@ -32,7 +32,7 @@ def deprecated(func):
 
 
 class PathParser:
-    def __init__(self, proj_root='~/querysum'):
+    def __init__(self, proj_root):
         self.proj_root = proj_root
         self.log = join(self.proj_root, 'log')
 
@@ -87,13 +87,12 @@ class PathParser:
         self.tune = join(self.proj_root, 'tune')
         self.rouge_dir = '~/ROUGE-1.5.5/data'  # specify your ROUGE dir
 
+proj_root = os.path.dirname(os.path.dirname(__file__))
+path_parser = PathParser(proj_root=proj_root)
 
-config_root = join(os.path.dirname(os.path.dirname(__file__)), 'config')
-
-# meta
+config_root = join(proj_root, 'config')
 config_meta_fp = os.path.join(config_root, 'config_meta.yml')
 config_meta = yaml.load(open(config_meta_fp, 'r', encoding='utf-8'))
-path_parser = PathParser()
 
 # model
 meta_model_name = config_meta['model_name']
