@@ -87,8 +87,9 @@ class PathParser:
         self.tune = join(self.proj_root, 'tune')
         self.rouge_dir = '~/ROUGE-1.5.5/data'  # specify your ROUGE dir
 
-proj_root = os.path.dirname(os.path.dirname(__file__))
-config_root = join(proj_root, 'config')
+src_root = os.path.dirname(os.path.dirname(__file__))
+proj_root = os.path.dirname(src_root)
+config_root = join(src_root, 'config')
 
 # meta
 config_meta_fp = os.path.join(config_root, 'config_meta.yml')
