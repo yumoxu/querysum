@@ -96,13 +96,13 @@ You can specify QA config in `src/frame/bert_qa/qa_config.py`.
 
 For passage-level QA (i.e., MRC), use `src/frame/bert_passage/infer.py`.
 
-Trained models used in the paper can be downloaded [here]().
+Trained models used in the paper can be downloaded [here](https://drive.google.com/file/d/1lOb9ECZa_fsYCI7Q41xMQjL0fzFvpkkD/view?usp=sharing).
 
 ### Summarization
 In `src/frame/centrality/centrality_qa_tfidf_hard.py`, run the following methods in order (or at once):
 
 ```python
-build_components_e2e()  # builds graph compnents
+build_components_e2e()  # build graph compnents
 score_e2e()  # run Markov Chain
 rank_e2e()  # rank sentences
 select_e2e()  # compose summary
