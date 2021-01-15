@@ -19,15 +19,6 @@ import dill
 import itertools
 from frame.bert_passage.passage_obj import SentObj, PassageObj
 
-def overwrite_config_model_for_ns():
-    path_parser.data_tdqfs_passages += '_4' 
-    config_model['max_nw_query'] = 100
-    config_model['max_nw_sent'] = 100
-    config_model['ns_passage'] = 4
-    config_model['stride'] = 2
-
-if config.grain == 'passage_4':
-    passages_dp = overwrite_config_model_for_ns()
 
 sentence_dp = path_parser.data_tdqfs_sentences
 passages_dp = path_parser.data_tdqfs_passages

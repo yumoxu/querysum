@@ -16,7 +16,10 @@ QA_RELEVANCE_SCORE_DIR_NAME = qa_config.RELEVANCE_SCORE_DIR_NAME
 DAMP = 0.85 # 1.0 (w/o query bias), 0.85 (w/ query bias)
 
 DIVERSITY_ALGORITHM = 'wan'
-OMEGA = 4  # set it to 4 for sentence, and 2 for passage
+
+# for DUC, set it to 4 for sentence, and 2 for passage
+# for TD-QFS, we do not use wan's diversity algorithm and set it to 0
+OMEGA = 4
 
 COS_THRESHOLD = 0.6
 

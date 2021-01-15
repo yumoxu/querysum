@@ -1,7 +1,7 @@
 ---
 model_name: 'bert_qa'  # bert_qa, bert_passage, bert_base
 test_year: '2007'  # 2005, 2006, 2007, tdqfs
-grain: 'sent'  # sent, passage, passage_4
+grain: 'sent'  # sent, passage
 
 mode: 'train'  # train, rank_sent, select_sent
 para_org: null  # True, null
