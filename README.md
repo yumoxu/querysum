@@ -57,7 +57,7 @@ self.rouge_dir = '~/ROUGE-1.5.5/data'  # specify your ROUGE dir
 Since we are not allowed to distribute DUC data, you can request DUC 2005-2007 from [NIST](https://www-nlpir.nist.gov/projects/duc/data.html). 
 After acquiring the data, gather each year's clusters, summaries, and queries under `data/docs`, `data/summary_targets` and `data/topics`, respectively. For instance, DUC 2006's clusters, queries, summaries should be found under `data/docs/2006/`, `data/topics/2006.sgml` and `data/summary_targets/2006/`, respectively. 
 
-TD-QFS data is hosted by the original data collector and can be downloaded from [here](https://www.cs.bgu.ac.il/~talbau/TD-QFS/files/TD-QFS.zip).
+TD-QFS data can be downloaded from [here](https://talbaumel.github.io/TD-QFS/files/TD-QFS.zip).
 You can also use the processed version [here](https://drive.google.com/file/d/1X1rKKP5SrUoU9-ki0urrlhO_L35Vl2oO/view?usp=sharing).
 
 After data preparation, you should have the following directory structure with the right files under each folder:
