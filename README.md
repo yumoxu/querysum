@@ -31,6 +31,8 @@ After cloning this project, use the following command to initialize the structur
 mkdir log data graph model rank text rank_passage text_passage
 ```
 
+Trained models used in the paper can be downloaded [here](https://drive.google.com/file/d/1lOb9ECZa_fsYCI7Q41xMQjL0fzFvpkkD/view?usp=sharing). 
+Please put them under `querysum/model`.
 
 ## Create environment
 ```bash
@@ -96,8 +98,6 @@ The scores are then converted into a ranking list, from which top K sentences ar
 You can specify QA config in `src/frame/bert_qa/qa_config.py`.
 
 For passage-level QA (i.e., MRC), use `src/frame/bert_passage/infer.py`.
-
-Trained models used in the paper can be downloaded [here](https://drive.google.com/file/d/1lOb9ECZa_fsYCI7Q41xMQjL0fzFvpkkD/view?usp=sharing).
 
 ### Summarization
 In `src/frame/centrality/centrality_qa_tfidf_hard.py`, run the following methods in order (or at once):
