@@ -55,6 +55,13 @@ Also, you need to setup ROUGE evaluation if you have not yet done it. Please ref
 self.rouge_dir = '~/ROUGE-1.5.5/data'  # specify your ROUGE dir
 ```
 
+Lastly, to run the centrality module with query injection, replace the `algorithms` package under the standard `lexrank` library with our code. You can download our code [here](https://drive.google.com/file/d/1w1voXYfiKjCb6iHjtdJK1xrkZ3ixURS3/view?usp=sharing), and put it under `~/querysum`. Then:
+```bash
+rm -rf ~/querysum/lib/python3.6/site-packages/lexrank/algorithms
+unzip algorithms.zip ~/querysum/lib/python3.6/site-packages/lexrank/
+rm algorithms.zip
+```
+
 ## Prepare benchmark data
 Since we are not allowed to distribute DUC data, you can request DUC 2005-2007 from [NIST](https://www-nlpir.nist.gov/projects/duc/data.html). 
 After acquiring the data, gather each year's clusters, summaries, and queries under `data/docs`, `data/summary_targets` and `data/topics`, respectively. For instance, DUC 2006's clusters, queries, summaries should be found under `data/docs/2006/`, `data/topics/2006.sgml` and `data/summary_targets/2006/`, respectively. 
